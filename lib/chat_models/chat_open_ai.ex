@@ -1003,7 +1003,7 @@ defmodule LangChain.ChatModels.ChatOpenAI do
   defp finish_reason_to_status("max_tokens"), do: :length
 
   defp finish_reason_to_status(other) do
-    Logger.warning("Unsupported finish_reason in message. Reason: #{inspect(other)}")
+    Logger.warning("Unsupported finish_reason in message. Reason >> #{inspect(other)}")
     nil
   end
 
