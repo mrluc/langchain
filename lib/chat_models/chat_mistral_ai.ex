@@ -286,6 +286,9 @@ defmodule LangChain.ChatModels.ChatMistralAI do
         nil ->
           :incomplete
 
+        "eos" ->
+          :complete
+
         "stop" ->
           :complete
 
