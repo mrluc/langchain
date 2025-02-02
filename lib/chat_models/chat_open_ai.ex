@@ -995,6 +995,7 @@ defmodule LangChain.ChatModels.ChatOpenAI do
   end
 
   defp finish_reason_to_status(nil), do: :incomplete
+  defp finish_reason_to_status("eos"), do: :complete
   defp finish_reason_to_status("stop"), do: :complete
   defp finish_reason_to_status("tool_calls"), do: :complete
   defp finish_reason_to_status("content_filter"), do: :complete
