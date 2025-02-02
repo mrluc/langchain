@@ -826,7 +826,7 @@ defmodule LangChain.ChatModels.ChatOpenAI do
         %{"finish_reason" => finish_reason, "message" => %{"tool_calls" => calls} = message} =
           data
       )
-      when finish_reason in ["tool_calls", "stop", "eos"] do
+      when finish_reason in ["tool_calls", "stop"] do
     case Message.new(%{
            "role" => "assistant",
            "content" => message["content"],
